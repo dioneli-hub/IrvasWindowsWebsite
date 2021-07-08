@@ -27,10 +27,12 @@ const images = ()=> {
             imgPopup.style.display = 'flex';
             const path = target.parentNode.getAttribute('href');
             bigImage.setAttribute('src', path);
+            document.body.style.overflowY = 'hidden';
         }
 
         if (target && target.matches('div.popup')){
             imgPopup.style.display = 'none';
+            document.body.style.overflowY = 'visible';
         }
     })
 
