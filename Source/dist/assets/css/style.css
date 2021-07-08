@@ -1823,6 +1823,13 @@ textarea:focus {
   to {opacity: 1}
  }
 
+.image_overlay {
+  width: 100%;
+  height: 100%;
+  background:#000;
+  opacity:0.5;
+}
+
 /* small devices, tablets */
 @media only screen and (max-width: 768px) {
   .animated {
