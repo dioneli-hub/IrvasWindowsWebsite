@@ -3,32 +3,32 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
         tabs = document.querySelectorAll(tabSelector),
         content = document.querySelectorAll(contentSelector);
 
-    function hideTabContent(){
+    function hideTabContent() {
         content.forEach(item => {
             item.classList.add("hide");
             item.classList.remove("show", "fade");
 
-        })
+        });
 
         tabs.forEach(tab => {
             tab.classList.remove(activeClass);
-        })
+        });
     }
 
-    function  showTabContent(i = 0){
+    function showTabContent(i = 0) {
         content[i].classList.add("show", "fade");
         content[i].classList.remove("hide");
         tabs[i].classList.add(activeClass);
     }
 
 
-    header.addEventListener('click', (e)=>{
+    header.addEventListener('click', (e) => {
         const target = e.target;
         if (target &&
-            (target.classList.contains(tabSelector.replace(/\./,""))
-        || target.parentNode.classList.contains(tabSelector.replace(/\./,"")))){
+            (target.classList.contains(tabSelector.replace(/\./, ""))
+                || target.parentNode.classList.contains(tabSelector.replace(/\./, "")))) {
             tabs.forEach((tab, i) => {
-                if (target == tab || target.parentNode == tab){
+                if (target == tab || target.parentNode == tab) {
                     hideTabContent();
                     showTabContent(i);
                 }
