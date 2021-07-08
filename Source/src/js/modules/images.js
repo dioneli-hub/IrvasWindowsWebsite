@@ -1,8 +1,11 @@
+import calcScroll from "./calcScroll";
+
 const images = ()=> {
     const imgPopup = document.createElement('div'),
         workSection = document.querySelector('.works'),
         bigImage = document.createElement('img'),
-        overlay = document.createElement('div');
+        overlay = document.createElement('div'),
+        scroll = calcScroll();
 
 
     imgPopup.classList.add('popup');
@@ -28,11 +31,13 @@ const images = ()=> {
             const path = target.parentNode.getAttribute('href');
             bigImage.setAttribute('src', path);
             document.body.style.overflowY = 'hidden';
+            document.body.style.marginRight = `${scroll}px`
         }
 
         if (target && target.matches('div.popup')){
             imgPopup.style.display = 'none';
             document.body.style.overflowY = 'visible';
+            document.body.style.marginRight = `0px`;
         }
     })
 
