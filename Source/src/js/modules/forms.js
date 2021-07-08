@@ -1,10 +1,10 @@
-const forms = ()=>{
+const forms = () => {
     const forms = document.querySelectorAll("form"),
         inputs = document.querySelectorAll("input"),
         phoneInputs = document.querySelectorAll('input[name="user_phone"]');
 
     phoneInputs.forEach(input => {
-        input.addEventListener('input', ()=>{
+        input.addEventListener('input', () => {
             input.value = input.value.replace(/\D/, '');
         });
     });
@@ -15,7 +15,7 @@ const forms = ()=>{
         failure: "Что-то пошло не так..."
     };
 
-    const postData = async(url, data) => {
+    const postData = async (url, data) => {
         document.querySelector('.status').textContent = message.loading;
         let res = await fetch(url, {
             method: 'POST',
@@ -28,7 +28,7 @@ const forms = ()=>{
     const clearInputs = () => {
         inputs.forEach(input => {
             input.value = '';
-        })
+        });
     }
 
     forms.forEach(form => {

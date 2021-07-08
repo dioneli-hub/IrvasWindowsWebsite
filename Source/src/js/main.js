@@ -3,6 +3,7 @@ import modals from "./modules/modals";
 import tabs from "./modules/tabs";
 import forms from "./modules/forms";
 import timer from "./modules/timer";
+import images from "./modules/images";
 
 window.addEventListener("DOMContentLoaded", () => {
     "use strict";
@@ -14,6 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
     tabs(".decoration_slider",".no_click", ".decoration_content > div > div", "after_click");
     forms();
     timer(".container1", deadline);
+    images();
 });
 
 console.log(1);
