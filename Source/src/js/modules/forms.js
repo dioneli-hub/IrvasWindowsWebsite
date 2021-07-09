@@ -57,6 +57,15 @@ const forms = (state) => {
                     setTimeout(() => {
                         statusMessage.remove();
                     }, 5000);
+
+                    if (form.getAttribute('data-calc')==='end'){
+                        setTimeout(()=>{
+                            document.querySelector(".popup_calc_end").style.display = "none";
+                            document.body.style.overflow = "";
+                            document.body.style.marginRight = `0px`;
+                        }, 2000);
+                    }
+
                 });
         });
     });
