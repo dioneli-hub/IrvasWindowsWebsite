@@ -18057,6 +18057,8 @@ var forms = function forms(state) {
             document.body.style.marginRight = "0px";
           }, 2000);
         }
+
+        state = {};
       });
     });
   });

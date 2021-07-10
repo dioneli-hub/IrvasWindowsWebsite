@@ -38,8 +38,8 @@ const forms = (state) => {
 
             const formData = new FormData(form);
 
-            if(form.getAttribute('data-calc') === 'end'){
-                for (let key in state){
+            if (form.getAttribute('data-calc') === "end") {
+                for (let key in state) {
                     formData.append(key, state[key]);
                 }
             }
@@ -48,9 +48,10 @@ const forms = (state) => {
                 .then(res => {
                     console.log(res);
                     statusMessage.textContent = message.success;
+                    
                 })
                 .catch(() => {
-                    statusMessage.textContent = message.failure
+                    statusMessage.textContent = message.failure;
                 })
                 .finally(() => {
                     clearInputs();
@@ -65,6 +66,7 @@ const forms = (state) => {
                             document.body.style.marginRight = `0px`;
                         }, 2000);
                     }
+
 
                 });
         });
